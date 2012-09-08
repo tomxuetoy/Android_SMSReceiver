@@ -10,8 +10,14 @@ import android.widget.Toast;
 public class SMSReceiver extends BroadcastReceiver {
 	/* 当收到短信时，就会触发此方法 */
 	public void onReceive(Context context, Intent intent) {
-		// intent -> bundle -> Object messages[] -> smsMessage[]
+		// Tom Xue: intent -> bundle -> Object messages[] -> smsMessage[]
 		Bundle bundle = intent.getExtras();
+
+		// Tom Xue: to see what keySet() contains, which including pdus...
+		Toast toast0 = Toast.makeText(context, "keySet()= " + bundle.keySet(),
+				Toast.LENGTH_LONG);
+		toast0.show();
+
 		Object messages[] = (Object[]) bundle.get("pdus");
 		SmsMessage smsMessage[] = new SmsMessage[messages.length];
 		for (int n = 0; n < messages.length; n++) {

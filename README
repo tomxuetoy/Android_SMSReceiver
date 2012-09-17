@@ -1,0 +1,8 @@
+AndroidManifest.xml
+    Don't write it by hands, because it can be generated via the form.
+
+    Manifest
+    Application -> Application Nodes -> Add -> Name: android.provider.Telephony.SMS_RECEIVED
+    Permissions
+    Instrumentation
+    AndroidManifest.xml
